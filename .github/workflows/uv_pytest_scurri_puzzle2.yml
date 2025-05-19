@@ -6,7 +6,8 @@ name: UV Pytest
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "public/**" ]
+    branches: [ "public/scurri" ]
+    paths: ["projects/puzzle2"]
   pull_request:
     branches: [ "master" ]
 
@@ -18,7 +19,9 @@ jobs:
   uv-example:
     name: python
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./projects/puzzle2
     steps:
       - uses: actions/checkout@v4
 
@@ -30,4 +33,4 @@ jobs:
 
       - name: Run tests
         # For example, using `pytest`
-        run: uv run pytest tests
+        run: uv run pytest -v --cov=puzzle2
