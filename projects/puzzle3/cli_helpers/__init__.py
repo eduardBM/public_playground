@@ -1,6 +1,6 @@
 """
 # UNLICENSE
-Unittests for library puzzle2
+Implementation library for puzzle2
 Maintainer: Eduard Biceri-Matei (eduard.bicerimatei@gmail.com)
 
 Documentation: see README.md
